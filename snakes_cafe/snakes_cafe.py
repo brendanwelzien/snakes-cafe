@@ -53,7 +53,9 @@ food = {
 }
 
 
-
+if myOrder not in food:
+    print("Sorry we do not have " + (myOrder))
+    
 stopOrder = False
 def __theOrder__():
     myOrder = input('> ')
