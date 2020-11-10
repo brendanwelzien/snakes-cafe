@@ -53,19 +53,23 @@ food = {
 }
 
 
-if myOrder not in food:
-    print("Sorry we do not have " + (myOrder))
-    
 stopOrder = False
 def __theOrder__():
     myOrder = input('> ')
     if myOrder == 'quit':
         global stopOrder
         stopOrder = True
+
+
+
+    if myOrder not in food:
+        print("Sorry we do not have " + (myOrder))
+    
     else:
         for item in food.keys():
-            food[item] += 1
-            amount = food[item]
+            if item == myOrder:
+                food[item] += 1
+                amount = food[item]
         
         if amount == 1:
             print(f'**  ' + str(amount) + ' order of ' + myOrder + ' have been added to your meal**')
